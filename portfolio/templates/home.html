@@ -24,13 +24,31 @@
  </div>
 </div>
  </header>
- {% for project in projects%}
- <h2>{{project.titulo}}</h2>
- <p>{{project.descripcion}}</p>
- <img src="{{project.imagen.url}}" alt="{{project.imagen.url}}"/>
- {% if project.url %}
- <a href="{{project.url}}">URL</a>
- {% endif %} {% endfor %} {% endblock %}
+ <div class="row my-4 text-center">
 
+   <h3>My Projects</h3>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, aperiam?</p>
+ 
+   {% for project in projects %}
+   <div class="col-md-4 p-4">
+     <div class="card bg-black card-project">
+       <img src="{{project.imagen.url }}" class="card-img-top" />
+ 
+       <div class="card-body">
+ 
+         <h2>{{ project.titulo }}</h2>
+         <p>{{ project.descripcion }}</p>
+ 
+         {% if project.url %}
+         <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="__blank" rel="noreferrer">Visit the
+           Project</a>
+         {% endif %}
+       </div>
+     </div>
+   </div>
+   {% endfor %}
+ </div>
+ 
+ {% endblock %}
 
 
