@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-</head>
-<body>
-    {% for project in projects%}
+
+ 
+ {% extends 'layout.html'%}
+ {% block content %}
+ <h1>Projects</h1>
+ {% for project in projects%}
     <h2>{{project.titulo}}</h2>
     <p>{{project.descripcion}}</p>
     <img src="{{project.imagen.url}}" alt="{{project.imagen.url}}"/>
     {% if project.url %}
     <a href="{{project.url}}">URL</a>
-    {% endif %} {% endfor %}
-</body>
-</html>
+    {% endif %} {% endfor %} {% endblock %}
